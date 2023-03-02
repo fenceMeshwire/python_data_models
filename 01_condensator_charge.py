@@ -31,29 +31,27 @@ def store_results(system, change_values):
     return series
 
 def plot_results(results):
-
     fig = plt.figure()
     ax = fig.add_subplot()
-
     ax.plot(results, label='Voltage')
     ax.legend(loc='best')
-
+    
     props = {
         'title':'Charging Curve of a Capacitor', 
         'xlabel':'Time (s)',
         'ylabel': 'Voltage (V)'
         }
     ax.set(**props)
-
     plt.show()
 
-# 1. Create system
-system = create_system()
-# 2. Initialize the system
-change_values(system.t_0, system.t_end, system)
-# 3. Create and store the results
-results = store_results(system, change_values)
-# 4. Check the results
-results
-# 5. Plot the results
-plot_results(results)
+if __name__ == '__main__':
+    # 1. Create system
+    system = create_system()
+    # 2. Initialize the system
+    change_values(system.t_0, system.t_end, system)
+    # 3. Create and store the results
+    results = store_results(system, change_values)
+    # 4. Check the results
+    results
+    # 5. Plot the results
+    plot_results(results)
