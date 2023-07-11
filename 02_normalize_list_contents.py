@@ -10,21 +10,23 @@ def normalize_list_contents(list_contents):
     result = []
   
     for i in range(len(list_contents)):
-        if len(list_contents[i]) > 2:
+        if ',' in list_contents[i]:
             remainder += list_contents[i].split(',')
 
     list_contents += remainder
 
     for i in range(len(list_contents)):
-        if len(list_contents[i]) <= 2:
+        if not ',' in list_contents[i]:
             result.append(list_contents[i])
 
     result = list(set(result))
     result.sort()
+    result = sorted(result, key=len)
 
     return result
 
 if __name__ == '__main__':
-    list_contents = ['10', '11', '24,91', '25', '24', '17,24,91', '92']
+    # The elements of the list have a length of 2 and are separated by a comma.
+    list_contents = ['10', '11', '24,91', '25', '24', '17,24,91,100', '92']
     result = normalize_list_contents(list_contents)
     print(result)
