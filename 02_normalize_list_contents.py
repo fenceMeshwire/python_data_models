@@ -26,7 +26,6 @@ def normalize_list_contents(list_contents):
     return result
 
 if __name__ == '__main__':
-    # The elements of the list have a length of 2 and are separated by a comma.
     list_contents = ['10', '11', '24,91', '25', '24', '17,24,91,100', '92']
     result = normalize_list_contents(list_contents)
     print(result)
