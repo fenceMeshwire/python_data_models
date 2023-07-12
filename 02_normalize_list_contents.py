@@ -13,7 +13,7 @@ def normalize_list_contents(list_contents):
         if ',' in list_contents[i]:
             remainder += list_contents[i].split(',')
     if remainder == None: 
-        return unify_sort_list(list_contents)
+        return make_unique_sorted_list(list_contents)
     else:
         list_contents += remainder
 
@@ -21,9 +21,9 @@ def normalize_list_contents(list_contents):
         if not ',' in list_contents[i]:
             result.append(list_contents[i])
     
-    return unify_sort_list(result)
+    return make_unique_sorted_list(result)
     
-def unify_sort_list(input_list):
+def make_unique_sorted_list(input_list):
     input_list = list(set(input_list))
     input_list.sort()
     return sorted(input_list, key=len)
