@@ -7,7 +7,6 @@
 def normalize_list_contents(list_contents):
     remainder=[]
     result=[]
-    
     list_contents = [str(list_contents[n]) for n in range(len(list_contents))]
     
     for i in range(len(list_contents)):
@@ -29,6 +28,7 @@ def make_unique_sorted_list(input_list):
     input_list.sort()
     return sorted(input_list, key=len)
 
+# ______________________________________________________________________________
 if __name__ == '__main__':
     list_contents = ['10', '11', '24,91', '25', '24', '17,24,91,100', '92']
     result = normalize_list_contents(list_contents)
