@@ -5,7 +5,7 @@
 # 02_normalize_list_contents.py
 
 def normalize_list_contents(list_contents, remainder=[], result=[]):
-    
+    list_contents = [str(list_contents[n]) for n in range(len(list_contents))]
     for i in range(len(list_contents)):
         if ',' in list_contents[i]:
             remainder += list_contents[i].split(',')
